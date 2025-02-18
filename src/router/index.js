@@ -17,9 +17,10 @@ const routes = [
     name: 'Birthday',
     component: BirthdayGreeting,
     beforeEnter: (to, from, next) => {
-      const isAuthenticated = localStorage.getItem('isAuthenticated')
+      const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true' // Приводим к булевому значению
+      console.log('Auth check после приведения:', isAuthenticated) // Проверяем, что теперь там true/false
       isAuthenticated ? next() : next('/login')
-    }
+    }    
   }
 ]
 
