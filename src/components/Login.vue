@@ -37,6 +37,12 @@ export default {
       error: false
     }
   },
+  mounted() {
+    // Проверяем, авторизован ли пользователь
+    if (localStorage.getItem('isAuthenticated') === 'true') {
+      this.$router.push('/birthday'); // Перенаправляем на страницу birthday
+    }
+  },
   methods: {
     handleLogin() {
       this.error = false;
