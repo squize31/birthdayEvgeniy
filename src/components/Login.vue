@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     handleLogin() {
+      this.error = false;
       // Проверка логина и пароля
       if (this.username === 'Evgeniy' && this.password === '18021985') {
         console.log('Успешный вход, isAuthenticated установлен!')
